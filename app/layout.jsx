@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         <div className="flex container">
-          <div className="flex-none w-64 bg-red-300">
+          <div className="hidden flex-none w-64 bg-red-300">
             <Sidebar />
           </div>
           <div className="flex-auto bg-green-300">{children}</div>
