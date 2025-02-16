@@ -23,11 +23,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <Header />
-        <Sidebar />
-        {children}
+        <div className="flex container">
+          <div className="flex-none w-64 bg-red-300">
+            <Sidebar />
+          </div>
+          <div className="flex-auto bg-green-300">{children}</div>
+        </div>
         <Footer />
       </body>
     </html>

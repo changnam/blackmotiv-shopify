@@ -1,5 +1,5 @@
 export default function Announcement(){
     return(
-        <div>announcement </div>
+        <div className="text-center">announcement </div>
     )
 }
