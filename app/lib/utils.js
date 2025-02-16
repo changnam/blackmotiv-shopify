@@ -7,3 +7,7 @@ export  async function delay(ms = 2000) {
     await sleep(ms); // ⏳ Waits for 2 seconds
     console.log(`After ${ms} seconds`);
   }
+
+export function ensureStartWith(stringToCheck, startsWith){
+  return stringToCheck.startsWith(startsWith) ? stringToCheck : `${startsWith}${stringToCheck}`;
+}
