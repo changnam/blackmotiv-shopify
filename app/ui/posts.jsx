@@ -4,12 +4,12 @@ import { use } from 'react';
 export default function Posts({
   posts,
 }) {
-//   const allPosts = use(posts)
+  const allPosts = use(posts)
 
  
   return (
     <ul>
-      {posts.map((post) => (
+      {allPosts.map((post) => (
         <li key={post.id}>{post.title}</li>
       ))}
     </ul>
