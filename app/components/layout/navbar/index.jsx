@@ -2,7 +2,7 @@ import { getMenu } from "@/app/lib/shopify";
 import Link from "next/link";
 import MobileMenu from "./mobile-menu";
 import Search from "./search";
-import Logo from "../../icons/logo";
+import LogoSquare from "../../logo-square";
 
 export default async function Navbar(){
     const menu = await getMenu("blackmotiv-frontstore-menu");
@@ -19,10 +19,10 @@ export default async function Navbar(){
               prefetch={true}
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
-              <Logo />
-              <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
+              <LogoSquare />
+              {/* <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
                 {process.env.SITE_NAME}
-              </div>
+              </div> */}
             </Link>
             {menu.length > 0 ? (
               <ul className="hidden gap-6 text-sm md:flex md:items-center">
