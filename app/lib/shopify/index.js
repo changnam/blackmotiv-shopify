@@ -9,7 +9,7 @@ const endpoint = `${domain}${SHOPIFY_GRAPHQL_API_ENDPOINT}`;
 const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
 export async function shopifyFetch({
-    cache = "no-store",
+    cache = "force-cache",
     headers,
     query,
     tags,
