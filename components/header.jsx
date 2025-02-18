@@ -1,5 +1,5 @@
-import Announcement from "@/app/components/announcement";
-import Navbar from "@/app/components/navbar";
+import Announcement from "@/components/announcement";
+import Navbar from "@/components/navbar";
 
 export default function Header(){
     return (

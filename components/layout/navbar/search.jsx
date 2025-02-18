@@ -1,5 +1,5 @@
-"use client"
-import { createUrl } from "@/app/lib/utils";
+"use client";
+import { createUrl } from "@/lib/utils";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -17,7 +17,7 @@ export default function Search() {
     } else {
       newParams.delete("q");
     }
-    Router.push(createUrl("/search",newParams));
+    router.push(createUrl("/search",newParams));
   }
 
   return (

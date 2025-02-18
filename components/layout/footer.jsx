@@ -1,4 +1,4 @@
-import { getMenu } from "@/app/lib/shopify"
+import { getMenu } from "@/lib/shopify"
 import Link from "next/link";
 
 export default async function Footer(){
