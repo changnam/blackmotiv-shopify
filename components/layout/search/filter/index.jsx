@@ -8,7 +8,7 @@ function FilterItemList({ list }) {
   return (
     <>
       {list.map((item, i) => (
-        <Suspense>
+        <Suspense key={i}>
           <FilterItem key={i} item={item} />
         </Suspense>
       ))}
@@ -32,9 +32,7 @@ export default function FilterList({
           <FilterItemList list={list} />
         </ul>
         <ul className="md:hidden">
-          <Suspense>
             <FilterItemDropDown list={list} />
-          </Suspense>
         </ul>
       </nav>
     </>

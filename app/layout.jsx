@@ -2,6 +2,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import { CartProvider } from "@/components/cart/cart-context";
+import { cookies } from "next/headers";
+import { getCart } from "@/lib/shopify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,14 +22,18 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    const cartId = cookies().get("cartId")?.value;
+    const cart = getCart(cartId);
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <CartProvider cartPromise={cart}>
+          <Navbar />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
