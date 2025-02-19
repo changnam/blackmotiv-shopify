@@ -2,7 +2,7 @@
 
 import { Dialog, Transition } from "@headlessui/react";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useActionState, useEffect, useRef, useState } from "react";
 import { useCart } from "./cart-context";
 import { createUrl } from "@/lib/utils";
 import Image from "next/image";
@@ -13,7 +13,6 @@ import CloseCart from "./close-cart";
 import { DEFAULT_OPTION } from "@/lib/constants";
 import { DeleteItemButton } from "./delete-item-button";
 import { EditItemQuantityButton } from "./edit-item-quantity-button";
-import { useFormStatus } from "react-dom";
 import LoadingDots from "@/components/loading-dots";
 import { createCartAndSetCookie, redirectToCheckout } from "./actions";
 
@@ -223,7 +222,7 @@ export default function CartModal() {
 }
 
 function CheckoutButton() {
-  const { pending } = useFormStatus();
+  const { pending } = useActionState();
 
   return (
     <button

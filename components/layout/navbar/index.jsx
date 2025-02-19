@@ -4,6 +4,7 @@ import MobileMenu from "./mobile-menu";
 import Search from "./search";
 import LogoSquare from "@/components/logo-square";
 import { Suspense } from "react";
+import CartModal from "@/components/cart/modal";
 
 export default async function Navbar(){
     const menu = await getMenu("blackmotiv-frontstore-menu");
@@ -46,7 +47,9 @@ export default async function Navbar(){
               <Search />
             </Suspense>
           </div>
-          <div className="flex justify-end md:w-1/3">{/* <CartModal /> */}</div>
+          <div className="flex justify-end md:w-1/3">
+            <CartModal />
+          </div>
         </div>
       </nav>
     );
